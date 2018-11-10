@@ -11,7 +11,7 @@
 /** @type {Object} Main namespace for the package/library */
 var NS = {
 	/**
-	 * All wrappers for client scripts
+	 * [All wrappers for client scripts]
 	 * @type {Object}
 	 */
 	client: {
@@ -22,7 +22,9 @@ var NS = {
 		 * @return {[type]}            [description]
 		 */
 		eventPageInit: function(type, callback) {
-			return callback(type);
+			return callback({
+				type: type
+			});
 		},
 		/**
 		 * [eventSaveRecord description]
@@ -41,7 +43,11 @@ var NS = {
 		 * @return {[type]}               [description]
 		 */
 		eventValidateField: function(sublistId, fieldId, sublistLine, callback) {
-			return callback(sublistId, fieldId, sublistLine);
+			return callback({
+				sublistId: sublistId,
+				fieldId: fieldId,
+				sublistLine: sublistLine
+			});
 		},
 		/**
 		 * [eventFieldChanged description]
@@ -52,7 +58,11 @@ var NS = {
 		 * @return {[type]}               [description]
 		 */
 		eventFieldChanged: function(sublistId, fieldId, sublistLine, callback) {
-			return callback(sublistId, fieldId, sublistLine);
+			return callback({
+				sublistId: sublistId,
+				fieldId: fieldId,
+				sublistLine: sublistLine
+			});
 		},
 		/**
 		 * [eventPostSourcing description]
@@ -62,7 +72,10 @@ var NS = {
 		 * @return {[type]}             [description]
 		 */
 		eventPostSourcing: function(sublistId, fieldId, callback) {
-			return callback(sublistId, fieldId);
+			return callback({
+				sublistId: sublistId,
+				fieldId: fieldId
+			});
 		},
 		/**
 		 * [eventLineInit description]
@@ -71,7 +84,9 @@ var NS = {
 		 * @return {[type]}             [description]
 		 */
 		eventLineInit: function(sublistId, callback) {
-			return callback(sublistId);
+			return callback({
+				sublistId: sublistId
+			});
 		},
 		/**
 		 * [eventValidateLine description]
@@ -80,7 +95,9 @@ var NS = {
 		 * @return {[type]}             [description]
 		 */
 		eventValidateLine: function(sublistId, callback) {
-			return callback(sublistId);
+			return callback({
+				sublistId: sublistId
+			});
 		},
 		/**
 		 * [eventRecalc description]
@@ -89,7 +106,9 @@ var NS = {
 		 * @return {[type]}             [description]
 		 */
 		eventRecalc: function(sublistId, callback) {
-			return callback(sublistId);
+			return callback({
+				sublistId: sublistId
+			});
 		},
 		/**
 		 * [eventValidateInsert description]
@@ -98,7 +117,9 @@ var NS = {
 		 * @return {[type]}             [description]
 		 */
 		eventValidateInsert: function(sublistId, callback) {
-			return callback(sublistId);
+			return callback({
+				sublistId: sublistId
+			});
 		},
 		/**
 		 * [eventValidateDelete description]
@@ -107,7 +128,9 @@ var NS = {
 		 * @return {[type]}             [description]
 		 */
 		eventValidateDelete: function(sublistId, callback) {
-			return callback(sublistId);
+			return callback({
+				sublistId: sublistId
+			});
 		}
-	}
+	},
 };
