@@ -15,7 +15,7 @@
 /** @type {Object} Main namespace for the package/library */
 var NS = {
 	/**
-	 * [All wrappers for client scripts]
+	 * [Namespace for client scripts]
 	 * @type {Object}
 	 */
 	client: {
@@ -138,7 +138,7 @@ var NS = {
 		}
 	},
 	/**
-	 * [All wrappers for user event scripts]
+	 * [Namespace for user event scripts]
 	 * @type {Object}
 	 */
 	event: {
@@ -193,7 +193,7 @@ var NS = {
 		},
 	},
 	/**
-	 * [All wrappers for logging]
+	 * [Namespace for logging]
 	 * @type {Object}
 	 */
 	log: {
@@ -215,7 +215,7 @@ var NS = {
 		}
 	},
 	/**
-	 * [All wrappers for context]
+	 * [Namespace for context]
 	 * @type {Object}
 	 */
 	context: {
@@ -242,7 +242,7 @@ var NS = {
 		}
 	},
 	/**
-	 * [suitelet description]
+	 * [Namespace for suitelet]
 	 * @type {Object}
 	 */
 	suitelet: {
@@ -289,7 +289,7 @@ var NS = {
 		}
 	},
 	/**
-	 * [restlet description]
+	 * [Namespace for restlet]
 	 * @type {Object}
 	 */
 	restlet: {
