@@ -272,6 +272,20 @@ var NS = {
 		 */
 		POST: function(callback) {
 			return callback();
+		},
+		/**
+		 * [PUT description]
+		 * @param {Function} callback [description]
+		 */
+		PUT: function(callback) {
+			return callback();
+		},
+		/**
+		 * [DELETE description]
+		 * @param {Function} callback [description]
+		 */
+		DELETE: function(callback) {
+			return callback();
 		}
 	}
 };
