@@ -198,8 +198,8 @@ var NS = {
 		 * @param  {[type]} errObj [Error object from try catch block]
 		 * @return {[type]}        [description]
 		 */
-		error: function(errObj) {
-			nlapiLogException('ERROR', errObj.getCode(), errObj.getDetails());
+		error: function(errorObj) {
+			nlapiLogException('ERROR', errorObj.getCode(), errorObj.getDetails());
 		},
 		/**
 		 * [execution description]
@@ -228,6 +228,39 @@ var NS = {
 		 */
 		getExecution: function() {
 			return nlapiGetContext().getExecutionContext();
+		}
+	},
+	/**
+	 * [suitelet description]
+	 * @type {Object}
+	 */
+	suitelet: {
+		/**
+		 * [init description]
+		 * @param  {[type]}   requestObj  [description]
+		 * @param  {[type]}   responseObj [description]
+		 * @param  {Function} callback    [description]
+		 * @return {[type]}               [description]
+		 */
+		init: function(requestObj, responseObj, callback) {
+			return callback({
+				requestObj: requestObj,
+				responseObj: responseObj
+			});
+		},
+		/**
+		 * [GET description]
+		 * @param {Function} callback [description]
+		 */
+		GET: function(callback) {
+			return callback();
+		},
+		/**
+		 * [POST description]
+		 * @param {Function} callback [description]
+		 */
+		POST: function(callback) {
+			return callback();
 		}
 	}
 };
