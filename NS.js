@@ -287,5 +287,49 @@ var NS = {
 		DELETE: function(callback) {
 			return callback();
 		}
+	},
+	/**
+	 * [restlet description]
+	 * @type {Object}
+	 */
+	restlet: {
+		init: function(configObj) {
+			var config = configObj,
+				get = function(key) {
+					if(config.hasOwnProperty(key)) return config[key];
+				};
+
+			return {
+				get: get
+			};
+		},
+		/**
+		 * [GET description]
+		 * @param {Function} callback [description]
+		 */
+		GET: function(callback) {
+			return callback();
+		},
+		/**
+		 * [POST description]
+		 * @param {Function} callback [description]
+		 */
+		POST: function(callback) {
+			return callback();
+		},
+		/**
+		 * [PUT description]
+		 * @param {Function} callback [description]
+		 */
+		PUT: function(callback) {
+			return callback();
+		},
+		/**
+		 * [DELETE description]
+		 * @param {Function} callback [description]
+		 */
+		DELETE: function(callback) {
+			return callback();
+		}
 	}
 };
