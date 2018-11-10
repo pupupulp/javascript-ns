@@ -188,4 +188,18 @@ var NS = {
 			});
 		},
 	},
+	/**
+	 * [All wrappers for logging]
+	 * @type {Object}
+	 */
+	log: {
+		/**
+		 * [error description]
+		 * @param  {[type]} errObj [Error object from try catch block]
+		 * @return {[type]}        [description]
+		 */
+		error: function(errObj) {
+			nlapiLogException('ERROR', errObj.getCode(), errObj.getDetails());
+		}
+	}
 };
