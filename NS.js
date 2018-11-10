@@ -133,4 +133,59 @@ var NS = {
 			});
 		}
 	},
+	/**
+	 * [All wrappers for user event scripts]
+	 * @type {Object}
+	 */
+	event: {
+		/**
+		 * [beforeLoad description]
+		 * @param  {[type]}   type       ['create', 'edit', 'view',
+		 * 	                              'copy', 'print', 'email',
+		 * 	                              'quickview']
+		 * @param  {[type]}   formObj    [nlobjForm]
+		 * @param  {[type]}   requestObj [nlobjRequest]
+		 * @param  {Function} callback   [description]
+		 * @return {[type]}              [description]
+		 */
+		beforeLoad: function(type, formObj, requestObj, callback) {
+			return callback({
+				type: type,
+				formObj: formObj,
+				requestObj: requestObj
+			});
+		},
+		/**
+		 * [beforeSubmit description]
+		 * @param  {[type]}   type     ['create', 'edit', 'delete',
+		 * 	                            'xedit (inline edit)',
+		 * 	                            'approve', 'reject', 'cancel',
+		 * 	                            'pack', 'ship',
+		 * 	                            'markcomplete', 'reassign',
+		 * 	                            'editforecast']
+		 * @param  {Function} callback [description]
+		 * @return {[type]}            [description]
+		 */
+		beforeSubmit: function(type, callback) {
+			return callback({
+				type: type
+			});
+		},
+		/**
+		 * [afterSubmit description]
+		 * @param  {[type]}   type     ['create', 'edit', 'delete',
+		 * 	                            'xedit (inline edit)',
+		 * 	                            'approve', 'reject', 'cancel',
+		 * 	                            'pack', 'ship', 'dropship',
+		 * 	                            'specialorder', 'orderitems',
+		 * 	                            'paybills']
+		 * @param  {Function} callback [description]
+		 * @return {[type]}            [description]
+		 */
+		afterSubmit: function(type, callback) {
+			return callback({
+				type: type
+			});
+		},
+	},
 };
