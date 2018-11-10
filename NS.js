@@ -200,6 +200,26 @@ var NS = {
 		 */
 		error: function(errObj) {
 			nlapiLogException('ERROR', errObj.getCode(), errObj.getDetails());
+		},
+	},
+	/**
+	 * [All wrappers for context]
+	 * @type {Object}
+	 */
+	context: {
+		/**
+		 * [get description]
+		 * @return {[type]} [description]
+		 */
+		get: function() {
+			return nlapiGetContext();
+		},
+		/**
+		 * [getExecution description]
+		 * @return {[type]} [description]
+		 */
+		getExecution: function() {
+			return nlapiGetContext().getExecutionContext();
 		}
 	}
 };
