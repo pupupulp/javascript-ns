@@ -201,6 +201,14 @@ var NS = {
 		error: function(errObj) {
 			nlapiLogException('ERROR', errObj.getCode(), errObj.getDetails());
 		},
+		/**
+		 * [execution description]
+		 * @param  {[type]} message [description]
+		 * @return {[type]}         [description]
+		 */
+		execution: function(message) {
+			nlapiLogExecution('DEBUG', message);
+		}
 	},
 	/**
 	 * [All wrappers for context]
