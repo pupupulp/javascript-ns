@@ -232,6 +232,13 @@ var NS = {
 		 */
 		getExecution: function() {
 			return nlapiGetContext().getExecutionContext();
+		},
+		/**
+		 * [getUser description]
+		 * @return {[type]} [description]
+		 */
+		getUser: function() {
+			return nlapiGetContext().getUser();
 		}
 	},
 	/**
