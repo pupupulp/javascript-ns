@@ -293,6 +293,11 @@ var NS = {
 	 * @type {Object}
 	 */
 	restlet: {
+		/**
+		 * [init description]
+		 * @param  {[type]} configObj [description]
+		 * @return {[type]}           [description]
+		 */
 		init: function(configObj) {
 			var config = configObj,
 				get = function(key) {
@@ -302,6 +307,18 @@ var NS = {
 			return {
 				get: get
 			};
+		},
+		/**
+		 * [auth description]
+		 * @param  {[type]} credentials [description]
+		 * @return {[type]}             [description]
+		 */
+		auth: function(credentials) {
+			return "NLAuth " + 
+				"nlauth_account="+ credentials.account + ", " +
+				"nlauth_email="+ credentials.email + ", " +
+				"nlauth_signature="+ credentials.password + ", " +
+				"nlauth_role="+ credentials.role;
 		},
 		/**
 		 * [GET description]
