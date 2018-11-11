@@ -193,7 +193,7 @@ var NS = {
 		},
 	},
 	/**
-	 * [Namespace for logging]
+	 * [Namespace for logging scripts]
 	 * @type {Object}
 	 */
 	log: {
@@ -215,7 +215,7 @@ var NS = {
 		}
 	},
 	/**
-	 * [Namespace for context]
+	 * [Namespace for context scripts]
 	 * @type {Object}
 	 */
 	context: {
@@ -263,7 +263,7 @@ var NS = {
 		}
 	},
 	/**
-	 * [Namespace for suitelet]
+	 * [Namespace for suitelet scripts]
 	 * @type {Object}
 	 */
 	suitelet: {
@@ -310,7 +310,7 @@ var NS = {
 		}
 	},
 	/**
-	 * [Namespace for restlet]
+	 * [Namespace for restlet scripts]
 	 * @type {Object}
 	 */
 	restlet: {
@@ -369,5 +369,12 @@ var NS = {
 		DELETE: function(callback) {
 			return callback();
 		}
+	},
+	/**
+	 * [Namespace for portlet scripts]
+	 * @type {Object}
+	 */
+	portlet: {
+
 	}
 };
