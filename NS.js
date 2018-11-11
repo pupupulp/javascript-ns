@@ -239,6 +239,27 @@ var NS = {
 		 */
 		getUser: function() {
 			return nlapiGetContext().getUser();
+		},
+		/**
+		 * [getRemainingUsage description]
+		 * @return {[type]} [description]
+		 */
+		getRemainingUsage: function() {
+			return nlapiGetContext().getRemainingUsage();
+		},
+		/**
+		 * [getScriptId description]
+		 * @return {[type]} [description]
+		 */
+		getScriptId: function() {
+			return nlapiGetContext().getScriptId();
+		},
+		/**
+		 * [getDeploymentId description]
+		 * @return {[type]} [description]
+		 */
+		getDeploymentId: function() {
+			return nlapiGetContext().getDeploymentId();
 		}
 	},
 	/**
