@@ -9,3 +9,12 @@ code readability since most of the scripting on Netsuite are on a single file.
 
 Feel free to add more wrappers under namespaces provided or make another one
 if the functionality requires.
+
+### Guides and Resources
+- https://docs.oracle.com/cloud/latest/netsuitecs_gs/NSSDR/NSSDR.pdf
+- https://github.com/DavidKupratis/NetSuite
+- http://www.saturotech.com/blog/
+- https://github.com/3EN-Cloud/NetSuite-Atom-Snippet
+- https://github.com/ExploreConsulting/netsuite-fasttrack-toolkit
+- https://github.com/mastermatt/suitescript
+- https://github.com/BKnights/KotN-Netsuite
