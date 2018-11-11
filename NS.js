@@ -241,6 +241,13 @@ var NS = {
 			return nlapiGetContext().getUser();
 		},
 		/**
+		 * [getPercentComplete description]
+		 * @return {[type]} [description]
+		 */
+		getPercentComplete() {
+			return nlapiGetContext().getPercentComplete();
+		},
+		/**
 		 * [getRemainingUsage description]
 		 * @return {[type]} [description]
 		 */
@@ -388,5 +395,5 @@ var NS = {
 				column: column
 			});
 		}
-	}
+	},
 };
