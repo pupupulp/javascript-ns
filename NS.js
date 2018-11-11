@@ -396,4 +396,45 @@ var NS = {
 			});
 		}
 	},
+	/**
+	 * [Namespace for record API]
+	 * @type {Object}
+	 */
+	record: {
+		/**
+		 * [attach description]
+		 * @param  {Object} params [description]
+		 * @return {[type]}        [description]
+		 */
+		attach: function(record = {}, attributes = {}) {
+			nlapiAttachRecord(
+				record.typeId, 
+				record.id, 
+				record.targetTypeId, 
+				record.targetId, 
+				attributes
+			);
+		},
+		/**
+		 * [copy description]
+		 * @param  {Object} record   [description]
+		 * @param  {Object} defaults [description]
+		 * @return {[type]}          [description]
+		 */
+		copy: function(record = {}, defaults = {}) {
+			nlapiCopyRecord(
+				record.typeId,
+				record.id,
+				defaults
+			);
+		},
+		/**
+		 * [createCSVImport description]
+		 * @return {[type]} [description]
+		 */
+		createCSVImport: function() {
+			nlapiCreateCSVImport();
+		},
+		
+	}
 };
