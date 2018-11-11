@@ -375,6 +375,18 @@ var NS = {
 	 * @type {Object}
 	 */
 	portlet: {
-
+		/**
+		 * [init description]
+		 * @param  {[type]}   portletObj [description]
+		 * @param  {[type]}   column     [description]
+		 * @param  {Function} callback   [description]
+		 * @return {[type]}              [description]
+		 */
+		init: function(portletObj, column, callback) {
+			return callback({
+				portletObj: portletObj,
+				column: column
+			});
+		}
 	}
 };
