@@ -579,5 +579,89 @@ var NS = {
 		voidTransaction: function(type, recordId) {
 			return nlapiVoidTransaction(type, recordId);
 		},
+	},
+	/**
+	 * [Namespace for subrecord API]
+	 * @type {Object}
+	 */
+	subrecord: {
+		/**
+		 * [createCurrentLineItem description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} fieldId   [description]
+		 * @return {[type]}           [description]
+		 */
+		createCurrentLineItem: function(sublistId, fieldId) {
+			return nlapiCreateCurrentLineItemSubrecord(sublistId, fieldId);
+		},
+		/**
+		 * [editCurrentLineItem description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} fieldId   [description]
+		 * @return {[type]}           [description]
+		 */
+		editCurrentLineItem: function(sublistId, fieldId) {
+			return nlapiEditCurrentLineItemSubrecord(sublistId, fieldId);
+		},
+		/**
+		 * [removeCurrentLineItem description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} fieldId   [description]
+		 * @return {[type]}           [description]
+		 */
+		removeCurrentLineItem: function(sublistId, fieldId) {
+			return nlapiRemoveCurrentLineItemSubrecord(sublistId, fieldId);
+		},
+		/**
+		 * [viewCurrentLineItem description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} fieldId   [description]
+		 * @return {[type]}           [description]
+		 */
+		viewCurrentLineItem: function(sublistId, fieldId) {
+			return nlapiViewCurrentLineItemSubrecord(sublistId, fieldId);
+		},
+		/**
+		 * [viewLineItem description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} fieldId   [description]
+		 * @param  {[type]} line      [description]
+		 * @return {[type]}           [description]
+		 */
+		viewLineItem: function(sublistId, fieldId, line) {
+			return nlapiViewLineItemSubrecord(sublistId, fieldId, line);
+		},
+		/**
+		 * [create description]
+		 * @param  {[type]} fieldId [description]
+		 * @return {[type]}         [description]
+		 */
+		create: function(fieldId) {
+			return nlapiCreateSubrecord(fieldId);
+		},
+		/**
+		 * [edit description]
+		 * @param  {[type]} fieldId [description]
+		 * @return {[type]}         [description]
+		 */
+		edit: function(fieldId) {
+			return nlapiEditSubrecord(field);
+		},
+		/**
+		 * [remove description]
+		 * @param  {[type]} fieldId [description]
+		 * @return {[type]}         [description]
+		 */
+		remove: function(fieldId) {
+			return nlapiRemoveSubrecord(fieldId);
+		},
+		/**
+		 * [view description]
+		 * @param  {[type]} fieldId [description]
+		 * @return {[type]}         [description]
+		 */
+		view: function(fieldId) {
+			return nlapiViewSubrecord(fieldId);
+		}
 	}
 };
