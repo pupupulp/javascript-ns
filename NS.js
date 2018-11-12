@@ -404,17 +404,57 @@ var NS = {
 		/**
 		 * [attach description]
 		 * @param  {Object} record     [description]
+		 * @param  {Object} target     [description]
 		 * @param  {Object} attributes [description]
 		 * @return {[type]}            [description]
 		 */
-		attach: function(record = {}, attributes = {}) {
+		attach: function(record = {}, target = {}, attributes = {}) {
 			return nlapiAttachRecord(
 				record.typeId, 
 				record.id, 
-				record.targetTypeId, 
-				record.targetId, 
+				target.typeId, 
+				target.id, 
 				attributes
 			);
+		},
+		/**
+		 * [detach description]
+		 * @param  {Object} record     [description]
+		 * @param  {Object} target     [description]
+		 * @param  {Object} attributes [description]
+		 * @return {[type]}            [description]
+		 */
+		detach: function(record = {}, target = {}, attributes = {}) {
+			return nlapiDetachRecord(
+				record.typeId, 
+				record.id, 
+				target.typeId, 
+				target.id, 
+				attributes
+			);
+		},
+		/**
+		 * [createCSVImport description]
+		 * @return {[type]} [description]
+		 */
+		createCSVImport: function() {
+			return nlapiCreateCSVImport();
+		},
+		/**
+		 * [submitCSVImport description]
+		 * @param  {Object} csvImport [description]
+		 * @return {[type]}           [description]
+		 */
+		submitCSVImport: function(csvImport = {}) {
+			return nlapiSubmitCSVImport(csvImport);
+		},
+		/**
+		 * [createEmailMerger description]
+		 * @param  {[type]} templateId [description]
+		 * @return {[type]}            [description]
+		 */
+		createEmailMerger: function(templateId) {
+			return nlapiCreateEmailMerger(templateId);
 		},
 		/**
 		 * [copy description]
@@ -430,11 +470,114 @@ var NS = {
 			);
 		},
 		/**
-		 * [createCSVImport description]
+		 * [create description]
+		 * @param  {[type]} typeId   [description]
+		 * @param  {Object} defaults [description]
+		 * @return {[type]}          [description]
+		 */
+		create: function(typeId, defaults = {}) {
+			return nlapiCreateRecord(typeId, defaults);
+		},
+		/**
+		 * [delete description]
+		 * @param  {Object} record   [description]
+		 * @param  {Object} defaults [description]
+		 * @return {[type]}          [description]
+		 */
+		delete: function(record = {}, defaults = {}) {
+			return nlapiDeleteRecord(
+				record.typeId,
+				record.id,
+				defaults
+			);
+		},
+		/**
+		 * [getNew description]
 		 * @return {[type]} [description]
 		 */
-		createCSVImport: function() {
-			nlapiCreateCSVImport();
+		getNew: function() {
+			return nlapiGetNewRecord();
+		},
+		/**
+		 * [getOld description]
+		 * @return {[type]} [description]
+		 */
+		getOld: function() {
+			return nlapiGetOldRecord();
+		},
+		/**
+		 * [getId description]
+		 * @return {[type]} [description]
+		 */
+		getId: function() {
+			return nlapiGetRecordId();
+		},
+		/**
+		 * [getType description]
+		 * @return {[type]} [description]
+		 */
+		getType: function() {
+			return nlapiGetRecordType();
+		},
+		/**
+		 * [load description]
+		 * @param  {Object} record   [description]
+		 * @param  {Object} defaults [description]
+		 * @return {[type]}          [description]
+		 */
+		load: function(record = {}, defaults = {}) {
+			return nlapiLoadRecord(
+				record.typeId,
+				record.id,
+				defaults
+			);
+		},
+		/**
+		 * [submit description]
+		 * @param  {Object}  record    [description]
+		 * @param  {Boolean} sourcing  [description]
+		 * @param  {Boolean} mandatory [description]
+		 * @return {[type]}            [description]
+		 */
+		submit: function(record = {}, sourcing = false, mandatory = false) {
+			return nlapiSubmitRecord(record, sourcing, mandatory);
+		},
+		/**
+		 * [print description]
+		 * @param  {Object} config [description]
+		 * @return {[type]}        [description]
+		 */
+		print: function(config = {}, properties = {}, locale = false) {
+			return nlapiPrintRecord(
+				config.type,
+				config.trId,
+				config.mode,
+				properties,
+				locale
+			);
+		},
+		/**
+		 * [transform description]
+		 * @param  {Object} record [description]
+		 * @param  {Object} target [description]
+		 * @return {[type]}        [description]
+		 */
+		transform: function(record = {}, target = {}) {
+			return nlapiTransformRecord(
+				record.typeId,
+				record.id,
+				target.typeId,
+				target.defaults
+			);
+		},
+		/**
+		 * [voidTransaction description]
+		 * @param  {[type]} type     [description]
+		 * @param  {[type]} recordId [description]
+		 * @return {[type]}          [description]
+		 */
+		voidTransaction: function(type, recordId) {
+			return nlapiVoidTransaction(type, recordId);
 		},
 	}
 };
