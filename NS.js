@@ -859,5 +859,417 @@ var NS = {
 			);
 		}
 	},
-	// TODO : continue Sublist APIs
+	/**
+	 * [Namespace for sublist API scripts]
+	 * @type {Object}
+	 */
+	sublist: {
+		/**
+		 * [cancelLineItem description]
+		 * @param  {[type]} sublistId [description]
+		 * @return {[type]}           [description]
+		 */
+		cancelLineItem: function(sublistId) {
+			return nlapiCancelLineItem(sublistId);
+		},
+		/**
+		 * [commitLineItem description]
+		 * @param  {[type]} sublistId [description]
+		 * @return {[type]}           [description]
+		 */
+		commitLineItem: function(sublistId) {
+			return nlapiCommitLineItem(sublistId);
+		},
+		/**
+		 * [enableLineItemField description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} fieldId   [description]
+		 * @return {[type]}           [description]
+		 */
+		enableLineItemField: function(sublistId, fieldId) {
+			return nlapiDisableLineItemField(sublistId, field, false);
+		},
+		/**
+		 * [disableLineItemField description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} fieldId   [description]
+		 * @return {[type]}           [description]
+		 */
+		disableLineItemField: function(sublistId, fieldId) {
+			return nlapiDisableLineItemField(sublistId, field, true);
+		},
+		/**
+		 * [findLineItemMatrixValue description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		findLineItemMatrixValue: function(sublistId, field = {}) {
+			return nlapiFindLineItemMatrixValue(
+				sublistId,
+				field.id,
+				field.value,
+				field.column 
+			);
+		},
+		/**
+		 * [findLineItemValue description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		findLineItemValue: function(sublistId, field = {}) {
+			return nlapiFindLineItemValue(
+				sublistId,
+				field.id,
+				field.value
+			);
+		},
+		/**
+		 * [getCurrentLineItemIndex description]
+		 * @param  {[type]} sublistId [description]
+		 * @return {[type]}           [description]
+		 */
+		getCurrentLineItemIndex: function(sublistId) {
+			return nlapiGetCurrentLineItemIndex(sublistId);
+		},
+		/**
+		 * [getCurrentLineItemMatrixValue description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		getCurrentLineItemMatrixValue: function(sublistId, field = {}) {
+			return nlapiGetCurrentLineItemMatrixValue(
+				sublistId,
+				field.id,
+				field.column
+			);
+		},
+		/**
+		 * [getCurrentLineItemText description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} fieldId   [description]
+		 * @return {[type]}           [description]
+		 */
+		getCurrentLineItemText: function(sublistId, fieldId) {
+			return nlapiGetCurrentLineItemText(sublistId, fieldId);
+		},
+		/**
+		 * [getCurrentLineItemValue description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} fieldId   [description]
+		 * @return {[type]}           [description]
+		 */
+		getCurrentLineItemValue: function(sublistId, fieldId) {
+			return nlapiGetCurrentLineItemValue(sublistId, fieldId);
+		},
+		/**
+		 * [getCurrentLineItemSelectionValues description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} fieldId   [description]
+		 * @return {[type]}           [description]
+		 */
+		getCurrentLineItemSelectionValues: function(sublistId, fieldId) {
+			return nlapiGetCurrentLineItemValues(sublistId, fieldId);
+		},
+		/**
+		 * [getLineItemCount description]
+		 * @param  {[type]} sublistId [description]
+		 * @return {[type]}           [description]
+		 */
+		getLineItemCount: function(sublistId) {
+			return nlapiGetLineItemCount(sublistId);
+		},
+		/**
+		 * [getLineItemField description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		getLineItemField: function(sublistId, field = {}) {
+			return nlapiGetLineItemField(
+				sublistId,
+				field.id,
+				field.line
+			);
+		},
+		/**
+		 * [getLineItemMatrixField description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		getLineItemMatrixField: function(sublistId, field = {}) {
+			return nlapiGetLineItemMatrixField(
+				sublistId,
+				field.id,
+				field.line,
+				field.column
+			);
+		},
+		/**
+		 * [getLineItemMatrixValue description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		getLineItemMatrixValue: function(sublistId, field = {}) {
+			return nlapiGetLineItemMatrixValue(
+				sublistId,
+				field.id,
+				field.line,
+				field.column
+			);
+		},
+		/**
+		 * [getLineItemText description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		getLineItemText: function(sublistId, field = {}) {
+			return nlapiGetLineItemText(
+				sublistId,
+				field.id,
+				field.line
+			);
+		},
+		/**
+		 * [getLineItemValue description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		getLineItemValue: function(sublistId, field = {}) {
+			return nlapiGetLineItemValue(
+				sublistId,
+				field.id,
+				field.line
+			);
+		},
+		/**
+		 * [getLineItemSelectionValues description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		getLineItemSelectionValues: function(sublistId, field = {}) {
+			return nlapiGetLineItemValues(
+				sublistId,
+				field.id,
+				field.line
+			);
+		},
+		/**
+		 * [getMatrixCount description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} fieldId   [description]
+		 * @return {[type]}           [description]
+		 */
+		getMatrixCount: function(sublistId, fieldId) {
+			return nlapiGetMatrixCount(sublistId, fieldId);
+		},
+		/**
+		 * [getMatrixField description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		getMatrixField: function(sublistId, field = {}) {
+			return nlapiGetMatrixField(
+				sublistId,
+				field.id,
+				field.column
+			);
+		},
+		/**
+		 * [getMatrixValue description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		getMatrixValue: function(sublistId, field = {}) {
+			return nlapiGetMatrixValue(
+				sublistId,
+				field.id,
+				field.column
+			);
+		},
+		/**
+		 * [insertLineItem description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} line      [description]
+		 * @return {[type]}           [description]
+		 */
+		insertLineItem: function(sublistId, line) {
+			return nlapiInsertLineItem(sublistId, line);
+		},
+		/**
+		 * [insertLineItemOption description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		insertLineItemOption: function(sublistId, field = {}) {
+			return nlapiInsertLineItemOption(
+				sublistId,
+				field.id,
+				field.value,
+				field.text,
+				field.selected
+			);
+		},
+		/**
+		 * [isLineItemChanged description]
+		 * @param  {[type]}  sublistId [description]
+		 * @return {Boolean}           [description]
+		 */
+		isLineItemChanged: function(sublistId) {
+			return nlapiIsLineItemChanged(sublistId);
+		},
+		/**
+		 * [refreshLineItems description]
+		 * @param  {[type]} sublistId [description]
+		 * @return {[type]}           [description]
+		 */
+		refreshLineItems: function(sublistId) {
+			return nlapiRefreshLineItems(sublistId);
+		},
+		/**
+		 * [removeLineItem description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} line      [description]
+		 * @return {[type]}           [description]
+		 */
+		removeLineItem: function(sublistId, line) {
+			return nlapiRemoveLineItem(sublistId, line);
+		},
+		/**
+		 * [removeLinteItemOption description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {Object} field     [description]
+		 * @return {[type]}           [description]
+		 */
+		removeLineItemOption: function(sublistId, field = {}) {
+			return nlapiRemoveLineItemOption(
+				sublistId,
+				field.id,
+				field.value
+			);
+		},
+		/**
+		 * [selectLineItem description]
+		 * @param  {[type]} sublistId [description]
+		 * @param  {[type]} line      [description]
+		 * @return {[type]}           [description]
+		 */
+		selectLineItem: function(sublistId, line) {
+			return nlapiSelectLineItem(sublistId, line);
+		},
+		/**
+		 * [selectNewLineItem description]
+		 * @param  {[type]} sublistId [description]
+		 * @return {[type]}           [description]
+		 */
+		selectNewLineItem: function(sublistId) {
+			return nlapiSelectNewLineItem(sublistId);
+		},
+		/**
+		 * [setCurrentLineItemMatrixValue description]
+		 * @param {[type]}  sublistId [description]
+		 * @param {Object}  field     [description]
+		 * @param {Boolean} changed   [description]
+		 * @param {Boolean} sync      [description]
+		 */
+		setCurrentLineItemMatrixValue: function(sublistId, field = {}, changed = true, sync = false) {
+			return nlapiSetCurrentLineItemMatrixValue(
+				sublistId,
+				field.id,
+				field.column,
+				field.value,
+				changed,
+				sync
+			);
+		},
+		/**
+		 * [setCurrentLineItemText description]
+		 * @param {[type]}  sublistId [description]
+		 * @param {Object}  field     [description]
+		 * @param {Boolean} changed   [description]
+		 * @param {Boolean} sync      [description]
+		 */
+		setCurrentLineItemText: function(sublistId, field = {}, changed = true, sync = false) {
+			return nlapiSetCurrentLineItemText(
+				sublistId,
+				field.id,
+				field.text,
+				changed,
+				sync
+			);
+		},
+		/**
+		 * [setCurrentLineItemValue description]
+		 * @param {[type]}  sublistId [description]
+		 * @param {Object}  field     [description]
+		 * @param {Boolean} changed   [description]
+		 * @param {Boolean} sync      [description]
+		 */
+		setCurrentLineItemValue: function(sublistId, field = {}, changed = true, sync = false) {
+			return nlapiSetCurrentLineItemValue(
+				sublistId,
+				field.id,
+				field.value,
+				changed,
+				sync
+			);
+		},
+		/**
+		 * [setCurrentLineItemSelectionValues description]
+		 * @param {[type]}  sublistId [description]
+		 * @param {Object}  field     [description]
+		 * @param {Boolean} changed   [description]
+		 * @param {Boolean} sync      [description]
+		 */
+		setCurrentLineItemSelectionValues: function(sublistId, field = {}, changed = true, sync = false) {
+			return nlapiSetCurrentLineItemValues(
+				sublistId,
+				field.id,
+				field.values,
+				changed,
+				sync
+			);
+		},
+		/**
+		 * [setLineItemValue description]
+		 * @param {[type]} sublistId [description]
+		 * @param {Object} field     [description]
+		 */
+		setLineItemValue: function(sublistId, field = {}) {
+			return nlapiSetLineItemValue(
+				sublistId,
+				field.id,
+				field.line,
+				field.value
+			);
+		},
+		/**
+		 * [setMatrixValue description]
+		 * @param {[type]}  sublistId [description]
+		 * @param {Object}  field     [description]
+		 * @param {Boolean} changed   [description]
+		 * @param {Boolean} sync      [description]
+		 */
+		setMatrixValue: function(sublistId, field = {}, changed = true, sync = false) {
+			return nlapiSetMatrixValue(
+				sublistId,
+				field.id,
+				field.column,
+				field.value,
+				changed,
+				sync
+			);
+		},
+	},
+	//TODO: Search APIs
 };
