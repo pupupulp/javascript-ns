@@ -397,7 +397,7 @@ var NS = {
 		}
 	},
 	/**
-	 * [Namespace for record API]
+	 * [Namespace for record API scripts]
 	 * @type {Object}
 	 */
 	record: {
@@ -581,7 +581,7 @@ var NS = {
 		},
 	},
 	/**
-	 * [Namespace for subrecord API]
+	 * [Namespace for subrecord API scripts]
 	 * @type {Object}
 	 */
 	subrecord: {
@@ -663,5 +663,12 @@ var NS = {
 		view: function(fieldId) {
 			return nlapiViewSubrecord(fieldId);
 		}
+	},
+	/**
+	 * [Namespace for field API scripts]
+	 * @type {Object}
+	 */
+	field: {
+
 	}
 };
