@@ -1475,6 +1475,80 @@ var NS = {
 		createTemplateRenderer: function() {
 			return nlapiCreateTemplateRenderer();
 		},
+	},
+	/**
+	 * [Namespace for application navigation API scripts]
+	 * @type {Object}
+	 */
+	url: {
+		/**
+		 * [request description]
+		 * @param  {Object}   request  [description]
+		 * @param  {Function} callback [description]
+		 * @param  {[type]}   method   [description]
+		 * @return {[type]}            [description]
+		 */
+		request: function(request = {}, callback = null, method = null) {
+			return nlapiRequestURL(
+				request.url,
+				request.hasOwnProperty('body') ? request.body : null,
+				request.hasOwnProperty('headers') ? request.headers : null,
+				callback,
+				method
+			);
+		},
+		/**
+		 * [requestViaServer description]
+		 * @param  {Object} request [description]
+		 * @param  {[type]} method  [description]
+		 * @return {[type]}         [description]
+		 */
+		requestViaServer: function(request = {}, method = null) {
+			return nlapiRequestURL(
+				request.url,
+				request.hasOwnProperty('body') ? request.body : null,
+				request.hasOwnProperty('headers') ? request.headers : null,
+				method
+			);
+		},
+		/**
+		 * [requestWithCredentials description]
+		 * @param  {Array}  credentials [description]
+		 * @param  {Object} request     [description]
+		 * @param  {[type]} method      [description]
+		 * @return {[type]}             [description]
+		 */
+		requestWithCredentials: function(credentials = [], request = {}, method = null) {
+			return nlapiRequestURLWithCredentials(
+				credentials,
+				request.url,
+				request.hasOwnProperty('body') ? request.body : null,
+				request.hasOwnProperty('headers') ? request.headers : null,
+				method
+			);
+		},
+		/**
+		 * [resolve description]
+		 * @param  {[type]} type    [description]
+		 * @param  {[type]} typeId  [description]
+		 * @param  {[type]} id      [description]
+		 * @param  {[type]} display [description]
+		 * @return {[type]}         [description]
+		 */
+		resolve: function(type, typeId, id = null, display = null) {
+			return nlapiResolveURL(type, typeId, id, display);
+		},
+		/**
+		 * [setRedirect description]
+		 * @param {[type]}  type       [description]
+		 * @param {[type]}  typeId     [description]
+		 * @param {[type]}  id         [description]
+		 * @param {Boolean} edit       [description]
+		 * @param {Object}  parameters [description]
+		 */
+		setRedirect: function(type, typeId, id = null, edit = false, parameters = {}) {
+			return nlapiSetRedirectURL(type, typeId, id, edit, parameters);
+		}
 	}
-	//TODO: Application Navigation APIs
+	//TODO: Date APIs
 };
