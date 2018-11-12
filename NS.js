@@ -147,16 +147,16 @@ var NS = {
 		 * @param  {[type]}   type       ['create', 'edit', 'view',
 		 * 	                              'copy', 'print', 'email',
 		 * 	                              'quickview']
-		 * @param  {[type]}   formObj    [nlobjForm]
-		 * @param  {[type]}   requestObj [nlobjRequest]
+		 * @param  {Object}   form       [nlobjForm]
+		 * @param  {Object}   request    [nlobjRequest]
 		 * @param  {Function} callback   [description]
 		 * @return {[type]}              [description]
 		 */
-		beforeLoad: function(type, formObj, requestObj, callback) {
+		beforeLoad: function(type, formObj = {}, request = {}, callback) {
 			return callback({
 				type: type,
-				formObj: formObj,
-				requestObj: requestObj
+				form: form,
+				request: request
 			});
 		},
 		/**
@@ -199,11 +199,11 @@ var NS = {
 	log: {
 		/**
 		 * [error description]
-		 * @param  {[type]} errObj [Error object from try catch block]
+		 * @param  {Object} error  [Error object from try catch block]
 		 * @return {[type]}        [description]
 		 */
-		error: function(errorObj) {
-			nlapiLogException('ERROR', errorObj.getCode(), errorObj.getDetails());
+		error: function(error = {}) {
+			nlapiLogException('ERROR', error.getCode(), error.getDetails());
 		},
 		/**
 		 * [execution description]
@@ -276,15 +276,15 @@ var NS = {
 	suitelet: {
 		/**
 		 * [init description]
-		 * @param  {[type]}   requestObj  [description]
-		 * @param  {[type]}   responseObj [description]
-		 * @param  {Function} callback    [description]
-		 * @return {[type]}               [description]
+		 * @param  {Object}   request  [description]
+		 * @param  {Object}   response [description]
+		 * @param  {Function} callback [description]
+		 * @return {[type]}            [description]
 		 */
-		init: function(requestObj, responseObj, callback) {
+		init: function(request = {}, response = {}, callback) {
 			return callback({
-				requestObj: requestObj,
-				responseObj: responseObj
+				request: request,
+				response: response
 			});
 		},
 		/**
@@ -323,11 +323,11 @@ var NS = {
 	restlet: {
 		/**
 		 * [init description]
-		 * @param  {[type]} configObj [description]
-		 * @return {[type]}           [description]
+		 * @param  {Object} defaults [description]
+		 * @return {[type]}          [description]
 		 */
-		init: function(configObj) {
-			var config = configObj,
+		init: function(defaults = {}) {
+			var config = defaults,
 				get = function(key) {
 					if(config.hasOwnProperty(key)) return config[key];
 				};
@@ -338,10 +338,10 @@ var NS = {
 		},
 		/**
 		 * [auth description]
-		 * @param  {[type]} credentials [description]
+		 * @param  {Object} credentials [description]
 		 * @return {[type]}             [description]
 		 */
-		auth: function(credentials) {
+		auth: function(credentials = {}) {
 			return "NLAuth " + 
 				"nlauth_account="+ credentials.account + ", " +
 				"nlauth_email="+ credentials.email + ", " +
@@ -384,14 +384,14 @@ var NS = {
 	portlet: {
 		/**
 		 * [init description]
-		 * @param  {[type]}   portletObj [description]
-		 * @param  {[type]}   column     [description]
-		 * @param  {Function} callback   [description]
-		 * @return {[type]}              [description]
+		 * @param  {Object}   portlet  [description]
+		 * @param  {[type]}   column   [description]
+		 * @param  {Function} callback [description]
+		 * @return {[type]}            [description]
 		 */
-		init: function(portletObj, column, callback) {
+		init: function(portlet = {}, column, callback) {
 			return callback({
-				portletObj: portletObj,
+				portlet: portlet,
 				column: column
 			});
 		}
@@ -403,11 +403,12 @@ var NS = {
 	record: {
 		/**
 		 * [attach description]
-		 * @param  {Object} params [description]
-		 * @return {[type]}        [description]
+		 * @param  {Object} record     [description]
+		 * @param  {Object} attributes [description]
+		 * @return {[type]}            [description]
 		 */
 		attach: function(record = {}, attributes = {}) {
-			nlapiAttachRecord(
+			return nlapiAttachRecord(
 				record.typeId, 
 				record.id, 
 				record.targetTypeId, 
@@ -422,7 +423,7 @@ var NS = {
 		 * @return {[type]}          [description]
 		 */
 		copy: function(record = {}, defaults = {}) {
-			nlapiCopyRecord(
+			return nlapiCopyRecord(
 				record.typeId,
 				record.id,
 				defaults
@@ -435,6 +436,5 @@ var NS = {
 		createCSVImport: function() {
 			nlapiCreateCSVImport();
 		},
-		
 	}
 };
