@@ -207,97 +207,6 @@ var NS = {
 		},
 	},
 	/**
-	 * [Namespace for context scripts]
-	 * @type {Object}
-	 */
-	context: {
-		/**
-		 * [get description]
-		 * @return {[type]} [description]
-		 */
-		get: function() {
-			return nlapiGetContext();
-		},
-		/**
-		 * [getExecution description]
-		 * @return {[type]} [description]
-		 */
-		getExecution: function() {
-			return nlapiGetContext().getExecutionContext();
-		},
-		/**
-		 * [getDepartment description]
-		 * @return {[type]} [description]
-		 */
-		getDepartment: function() {
-			return nlapiGetDepartment();
-		},
-		/**
-		 * [getLocation description]
-		 * @return {[type]} [description]
-		 */
-		getLocation: function() {
-			return nlapiGetLocation();
-		},
-		/**
-		 * [getRole description]
-		 * @return {[type]} [description]
-		 */
-		getRole: function() {
-			return nlapiGetRole();
-		},
-		getSubsidiary: function() {
-			return nlapiGetSubsidiary();
-		},
-		/**
-		 * [getUser description]
-		 * @return {[type]} [description]
-		 */
-		getUser: function() {
-			return nlapiGetUser();
-		},
-		/**
-		 * [getPercentComplete description]
-		 * @return {[type]} [description]
-		 */
-		getPercentComplete() {
-			return nlapiGetContext().getPercentComplete();
-		},
-		/**
-		 * [getRemainingUsage description]
-		 * @return {[type]} [description]
-		 */
-		getRemainingUsage: function() {
-			return nlapiGetContext().getRemainingUsage();
-		},
-		/**
-		 * [getScriptId description]
-		 * @return {[type]} [description]
-		 */
-		getScriptId: function() {
-			return nlapiGetContext().getScriptId();
-		},
-		/**
-		 * [getDeploymentId description]
-		 * @return {[type]} [description]
-		 */
-		getDeploymentId: function() {
-			return nlapiGetContext().getDeploymentId();
-		},
-		/**
-		 * [logExecution description]
-		 * @param  {Object} log [description]
-		 * @return {[type]}     [description]
-		 */
-		logExecution: function(log = {}) {
-			return nlapiLogExecution(
-				log.type,
-				log.title,
-				log.details
-			);
-		}
-	},
-	/**
 	 * [Namespace for suitelet scripts]
 	 * @type {Object}
 	 */
@@ -1435,6 +1344,97 @@ var NS = {
 		yieldScript: function() {
 			return nlapiYieldScript();
 		}
-	}
+	},
+	/**
+	 * [Namespace for context API scripts]
+	 * @type {Object}
+	 */
+	context: {
+		/**
+		 * [get description]
+		 * @return {[type]} [description]
+		 */
+		get: function() {
+			return nlapiGetContext();
+		},
+		/**
+		 * [getExecution description]
+		 * @return {[type]} [description]
+		 */
+		getExecution: function() {
+			return nlapiGetContext().getExecutionContext();
+		},
+		/**
+		 * [getDepartment description]
+		 * @return {[type]} [description]
+		 */
+		getDepartment: function() {
+			return nlapiGetDepartment();
+		},
+		/**
+		 * [getLocation description]
+		 * @return {[type]} [description]
+		 */
+		getLocation: function() {
+			return nlapiGetLocation();
+		},
+		/**
+		 * [getRole description]
+		 * @return {[type]} [description]
+		 */
+		getRole: function() {
+			return nlapiGetRole();
+		},
+		getSubsidiary: function() {
+			return nlapiGetSubsidiary();
+		},
+		/**
+		 * [getUser description]
+		 * @return {[type]} [description]
+		 */
+		getUser: function() {
+			return nlapiGetUser();
+		},
+		/**
+		 * [getPercentComplete description]
+		 * @return {[type]} [description]
+		 */
+		getPercentComplete() {
+			return nlapiGetContext().getPercentComplete();
+		},
+		/**
+		 * [getRemainingUsage description]
+		 * @return {[type]} [description]
+		 */
+		getRemainingUsage: function() {
+			return nlapiGetContext().getRemainingUsage();
+		},
+		/**
+		 * [getScriptId description]
+		 * @return {[type]} [description]
+		 */
+		getScriptId: function() {
+			return nlapiGetContext().getScriptId();
+		},
+		/**
+		 * [getDeploymentId description]
+		 * @return {[type]} [description]
+		 */
+		getDeploymentId: function() {
+			return nlapiGetContext().getDeploymentId();
+		},
+		/**
+		 * [logExecution description]
+		 * @param  {Object} log [description]
+		 * @return {[type]}     [description]
+		 */
+		logExecution: function(log = {}) {
+			return nlapiLogExecution(
+				log.type,
+				log.title,
+				log.details
+			);
+		}
+	},
 	//TODO: UI Builder APIs
 };
