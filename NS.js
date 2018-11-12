@@ -669,6 +669,195 @@ var NS = {
 	 * @type {Object}
 	 */
 	field: {
-
-	}
+		/**
+		 * [enable description]
+		 * @param  {[type]} fieldId [description]
+		 * @return {[type]}         [description]
+		 */
+		enable: function(fieldId) {
+			return nlapiDisableField(fieldId, false);
+		},
+		/**
+		 * [disable description]
+		 * @param  {[type]} fieldId [description]
+		 * @return {[type]}         [description]
+		 */
+		disable: function(fieldId)  {
+			return nlapiDisableField(fieldId, true);
+		},
+		/**
+		 * [get description]
+		 * @param  {[type]} fieldId [description]
+		 * @return {[type]}         [description]
+		 */
+		get: function(fieldId) {
+			return nlapiGetField(fieldId);
+		},
+		/**
+		 * [getText description]
+		 * @param  {[type]} fieldId [description]
+		 * @return {[type]}         [description]
+		 */
+		getText: function(fieldId) {
+			return nlapiGetFieldText(fieldId);
+		},
+		/**
+		 * [setText description]
+		 * @param {Object}  field  [description]
+		 * @param {Boolean} changed [description]
+		 * @param {Boolean} sync    [description]
+		 */
+		setText: function(field = {}, changed = true, sync = false) {
+			return nlapiSetFieldText(
+				field.id,
+				field.text,
+				changed,
+				sync
+			);
+		},
+		/**
+		 * [getSelectionTexts description]
+		 * @param  {[type]} fieldId [description]
+		 * @return {[type]}         [description]
+		 */
+		getSelectionTexts: function(fieldId) {
+			return nlapiGetFieldTexts(fieldId);
+		},
+		/**
+		 * [setSelectionTexts description]
+		 * @param {Object}  field  [description]
+		 * @param {Boolean} changed [description]
+		 * @param {Boolean} sync    [description]
+		 */
+		setSelectionTexts: function(field = {}, changed = true, sync = false) {
+			return nlapiSetFieldTexts(
+				field.id,
+				field.texts,
+				changed,
+				sync
+			);
+		},
+		/**
+		 * [getValue description]
+		 * @param  {[type]} fieldId [description]
+		 * @return {[type]}         [description]
+		 */
+		getValue: function(fieldId) {
+			return nlapiGetFieldValue(fieldId);
+		},
+		/**
+		 * [setValue description]
+		 * @param {Object}  field  [description]
+		 * @param {Boolean} changed [description]
+		 * @param {Boolean} sync    [description]
+		 */
+		setValue: function(field = {}, changed = true, sync = false) {
+			return nlapiSetFieldValue(
+				field.id,
+				field.value,
+				changed,
+				sync
+			);
+		}
+		/**
+		 * [getSelectionValues description]
+		 * @param  {[type]} fieldId [description]
+		 * @return {[type]}         [description]
+		 */
+		getSelectionValues: function(fieldId) {
+			return nlapiGetFieldValues(fieldId);
+		},
+		/**
+		 * [setSelectionValues description]
+		 * @param {Object}  field   [description]
+		 * @param {Boolean} changed [description]
+		 * @param {Boolean} sync    [description]
+		 */
+		setSelectionValues: function(field = {}, changed = true, sync = false) {
+			return nlapiSetFieldValues(
+				field.id,
+				field.values,
+				changed,
+				sync
+			);
+		},
+		/**
+		 * [insertSelectOption description]
+		 * @param  {Object} field [description]
+		 * @return {[type]}        [description]
+		 */
+		insertSelectOption: function(field = {}) {
+			return nlapiInsertSelectOption(
+				field.id,
+				field.value,
+				field.text,
+				field.selected
+			);
+		},	
+		/**
+		 * [removeSelectOption description]
+		 * @param  {Object} field [description]
+		 * @return {[type]}       [description]
+		 */
+		removeSelectOption: function(field = {}) {
+			return nlapiRemoveSelectOption(
+				field.id,
+				field.value
+			);
+		},
+		/**
+		 * [lookup description]
+		 * @param  {Object}  config [description]
+		 * @param  {Boolean} text   [description]
+		 * @return {[type]}         [description]
+		 */
+		lookup: function(config = {}, text = false) {
+			return nlapiLookupField(
+				config.recordTypeId,
+				config.recordId,
+				text
+			);
+		},
+		/**
+		 * [lookupValue description]
+		 * @param  {Object} config [description]
+		 * @return {[type]}        [description]
+		 */
+		lookupValue: function(config = {}) {
+			return nlapiLookupField(
+				config.recordTypeId,
+				config.recordId,
+				false
+			);
+		},
+		/**
+		 * [lookupText description]
+		 * @param  {Object} config [description]
+		 * @return {[type]}        [description]
+		 */
+		lookupText: function(config = {}) {
+			return nlapiLookupField(
+				config.recordTypeId,
+				config.recordId,
+				true
+			);
+		},
+		/**
+		 * [submit description]
+		 * @param  {Object}  record   [description]
+		 * @param  {Object}  field    [description]
+		 * @param  {Boolean} sourcing [description]
+		 * @return {[type]}           [description]
+		 */
+		submit: function(record = {}, field = {}, sourcing = false) {
+			return nlapiSubmitField(
+				record.typeId,
+				record.id,
+				field.ids,
+				field.values,
+				sourcing
+			);
+		}
+	},
+	// TODO : continue Sublist APIs
 };
