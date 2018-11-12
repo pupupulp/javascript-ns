@@ -1367,9 +1367,46 @@ var NS = {
 		 * @return {[type]}               [description]
 		 */
 		record: function(recordId = null, savedSearchId = null, filters = {}) {
-			return nlapiSearchRecord(recordTypeId, savedSearchId, filters);
+			return nlapiSearchRecord(
+				recordTypeId, 
+				savedSearchId, 
+				filters
+			);
 		},
-		
+
+	},
+	/**
+	 * [Namespace for scheduling API scripts]
+	 * @type {Object}
+	 */
+	scheduling: {
+		/**
+		 * [scheduleScript description]
+		 * @param  {[type]} scriptId   [description]
+		 * @param  {[type]} deployId   [description]
+		 * @param  {Object} parameters [description]
+		 * @return {[type]}            [description]
+		 */
+		scheduleScript: function(scriptId, deployId = null, parameters = {}) {
+			return nlapiScheduleScript(
+				scriptId,
+				deployId,
+				parameters
+			);
+		},
+		/**
+		 * [setRecoveryPoint description]
+		 */
+		setRecoveryPoint: function() {
+			return nlapiSetRecoveryPoint();
+		},
+		/**
+		 * [yieldScript description]
+		 * @return {[type]} [description]
+		 */
+		yieldScript: function() {
+			return nlapiYieldScript();
+		}
 	}
-	//TODO: Scheduling APIs
+	//TODO: Execution Context APIs
 };
