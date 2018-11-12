@@ -205,14 +205,6 @@ var NS = {
 		error: function(error = {}) {
 			nlapiLogException('ERROR', error.getCode(), error.getDetails());
 		},
-		/**
-		 * [execution description]
-		 * @param  {[type]} message [description]
-		 * @return {[type]}         [description]
-		 */
-		execution: function(message) {
-			nlapiLogExecution('DEBUG', message);
-		}
 	},
 	/**
 	 * [Namespace for context scripts]
@@ -234,11 +226,35 @@ var NS = {
 			return nlapiGetContext().getExecutionContext();
 		},
 		/**
+		 * [getDepartment description]
+		 * @return {[type]} [description]
+		 */
+		getDepartment: function() {
+			return nlapiGetDepartment();
+		},
+		/**
+		 * [getLocation description]
+		 * @return {[type]} [description]
+		 */
+		getLocation: function() {
+			return nlapiGetLocation();
+		},
+		/**
+		 * [getRole description]
+		 * @return {[type]} [description]
+		 */
+		getRole: function() {
+			return nlapiGetRole();
+		},
+		getSubsidiary: function() {
+			return nlapiGetSubsidiary();
+		},
+		/**
 		 * [getUser description]
 		 * @return {[type]} [description]
 		 */
 		getUser: function() {
-			return nlapiGetContext().getUser();
+			return nlapiGetUser();
 		},
 		/**
 		 * [getPercentComplete description]
@@ -267,6 +283,18 @@ var NS = {
 		 */
 		getDeploymentId: function() {
 			return nlapiGetContext().getDeploymentId();
+		},
+		/**
+		 * [logExecution description]
+		 * @param  {Object} log [description]
+		 * @return {[type]}     [description]
+		 */
+		logExecution: function(log = {}) {
+			return nlapiLogExecution(
+				log.type,
+				log.title,
+				log.details
+			);
 		}
 	},
 	/**
@@ -1408,5 +1436,5 @@ var NS = {
 			return nlapiYieldScript();
 		}
 	}
-	//TODO: Execution Context APIs
+	//TODO: UI Builder APIs
 };
