@@ -808,10 +808,11 @@ var NS = {
 		/**
 		 * [lookup description]
 		 * @param  {Object}  config [description]
+		 * @param  {Array}   fields [description]
 		 * @param  {Boolean} text   [description]
 		 * @return {[type]}         [description]
 		 */
-		lookup: function(config = {}, text = false) {
+		lookup: function(config = {}, fields = [], text = false) {
 			return nlapiLookupField(
 				config.recordTypeId,
 				config.recordId,
@@ -821,9 +822,10 @@ var NS = {
 		/**
 		 * [lookupValue description]
 		 * @param  {Object} config [description]
+		 * @param  {Array}  fields [description]
 		 * @return {[type]}        [description]
 		 */
-		lookupValue: function(config = {}) {
+		lookupValue: function(config = {}, fields = []) {
 			return nlapiLookupField(
 				config.recordTypeId,
 				config.recordId,
@@ -833,9 +835,10 @@ var NS = {
 		/**
 		 * [lookupText description]
 		 * @param  {Object} config [description]
+		 * @param  {Array}  fields [description]
 		 * @return {[type]}        [description]
 		 */
-		lookupText: function(config = {}) {
+		lookupText: function(config = {}, fields = []) {
 			return nlapiLookupField(
 				config.recordTypeId,
 				config.recordId,
@@ -1271,5 +1274,102 @@ var NS = {
 			);
 		},
 	},
-	//TODO: Search APIs
+	/**
+	 * [Namespace for search API scripts]
+	 * @type {Object}
+	 */
+	search: {
+		/**
+		 * [create description]
+		 * @param  {[type]} recordTypeId [description]
+		 * @param  {Object} filters      [description]
+		 * @param  {Object} columns      [description]
+		 * @return {[type]}              [description]
+		 */
+		create: function(recordTypeId, filters = {}, columns = {}) {
+			return nlapiCreateSearch(recordTypeId, filters, columns);
+		},
+		/**
+		 * [load description]
+		 * @param  {[type]} recordTypeId  [description]
+		 * @param  {[type]} savedSearchId [description]
+		 * @return {[type]}               [description]
+		 */
+		load: function(recordTypeId, savedSearchId) {
+			return nlapiLoadSearch(recordTypeId. savedSearchId);
+		},
+		/**
+		 * [lookup description]
+		 * @param  {Object}  config [description]
+		 * @param  {Array}   fields [description]
+		 * @param  {Boolean} text   [description]
+		 * @return {[type]}         [description]
+		 */
+		lookup: function(config = {}, fields = [], text = false) {
+			return nlapiLookupField(
+				config.recordTypeId,
+				config.recordId,
+				text
+			);
+		},
+		/**
+		 * [lookupValue description]
+		 * @param  {Object} config [description]
+		 * @param  {Array}  fields [description]
+		 * @return {[type]}        [description]
+		 */
+		lookupValue: function(config = {}, fields = []) {
+			return nlapiLookupField(
+				config.recordTypeId,
+				config.recordId,
+				false
+			);
+		},
+		/**
+		 * [lookupText description]
+		 * @param  {Object} config [description]
+		 * @param  {Array}  fields [description]
+		 * @return {[type]}        [description]
+		 */
+		lookupText: function(config = {}, fields = []) {
+			return nlapiLookupField(
+				config.recordTypeId,
+				config.recordId,
+				true
+			);
+		},
+		/**
+		 * [duplicate description]
+		 * @param  {Object} record [description]
+		 * @param  {Array}  fields [description]
+		 * @return {[type]}        [description]
+		 */
+		duplicate: function(record = {}, fields = []) {
+			return nlapiSearchDuplicate(
+				record.typeId,
+				fields,
+				record.hasOwnProperty('id') ? record.id : null
+			);
+		},
+		/**
+		 * [global description]
+		 * @param  {[type]} keywords [description]
+		 * @return {[type]}          [description]
+		 */
+		global: function(keywords) {
+			return nlapiSearchGlobal(keywords);
+		},
+		/**
+		 * [record description]
+		 * @param  {[type]} recordId      [description]
+		 * @param  {[type]} savedSearchId [description]
+		 * @param  {Object} filters       [description]
+		 * @return {[type]}               [description]
+		 */
+		record: function(recordId = null, savedSearchId = null, filters = {}) {
+			return nlapiSearchRecord(recordTypeId, savedSearchId, filters);
+		},
+		
+	}
+	//TODO: Scheduling APIs
 };
