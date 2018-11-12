@@ -1436,5 +1436,45 @@ var NS = {
 			);
 		}
 	},
-	//TODO: UI Builder APIs
+	/**
+	 * [Namespace for UI builder API scripts]
+	 * @type {Object}
+	 */
+	ui: {
+		/**
+		 * [createAssistant description]
+		 * @param  {[type]}  title      [description]
+		 * @param  {Boolean} hideHeader [description]
+		 * @return {[type]}             [description]
+		 */
+		createAssistant: function(title, hideHeader = false) {
+			return nlapiCreateAssistant(title, hideHeader);
+		},
+		/**
+		 * [createForm description]
+		 * @param  {[type]}  title          [description]
+		 * @param  {Boolean} hideNavigation [description]
+		 * @return {[type]}                 [description]
+		 */
+		createForm: function(title, hideNavigation = false) {
+			return nlapiCreateForm(title, hideNavigation);
+		},
+		/**
+		 * [createList description]
+		 * @param  {[type]}  title          [description]
+		 * @param  {Boolean} hideNavigation [description]
+		 * @return {[type]}                 [description]
+		 */
+		createList: function(title, hideNavigation = false) {
+			return nlapiCreateList(title, hideNavigation);
+		},
+		/**
+		 * [createTemplateRenderer description]
+		 * @return {[type]} [description]
+		 */
+		createTemplateRenderer: function() {
+			return nlapiCreateTemplateRenderer();
+		},
+	}
+	//TODO: Application Navigation APIs
 };
